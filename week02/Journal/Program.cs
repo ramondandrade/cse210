@@ -41,6 +41,12 @@ class Program
                     break;
                 case "3":
 
+                    // NEW!!!
+                    // If the journal has a file name, the program show the message to the user
+                    // asking if the user wants to save in that file
+                    // If the user answer 'y', the program save in that file
+                    // If the user answer 'n' or anything else, the program ask for a new file name
+
                     if (journal._fileName != null)
                     {
                         Console.WriteLine($"Do you want to save in '{journal._fileName}' file? (y/n)");
@@ -65,9 +71,13 @@ class Program
                     break;
                 case "5":
 
+                    // NEW!!!
+                    // If there are unsaved changes or unsaved entries, the program show the error messsage, to save them
+                    // before exiting the program
+                    // Using the new method CheckBeforeExit()
+
                     if (journal.CheckBeforeExit())
                     {
-                        Console.WriteLine("Exiting the program.");
                         running = false;
                     }
                     else
